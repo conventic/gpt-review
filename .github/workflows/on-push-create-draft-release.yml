@@ -16,8 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.PAT }}
+        # with:
+          # token: ${{ secrets.PAT }}
 
       - name: Bump version and push tag
         id: tag_version
@@ -63,4 +63,4 @@ jobs:
             LICENSE dist/*.tar.gz dist/*.whl
         env:
           TAG: ${{ steps.tag_version.outputs.new_tag }}
-          GH_TOKEN: ${{ secrets.PAT }}
+          # GH_TOKEN: ${{ secrets.PAT }}
